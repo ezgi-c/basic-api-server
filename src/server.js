@@ -1,12 +1,12 @@
-const express = require('express');
+const express = require("express");
 
-const { logger } = require('./middleware/logger');
+const { logger } = require("./middleware/logger");
 
-const { clothesRoutes } = require('./routes/clothes.route');
-const { foodRoutes } = require('./routes/food.route');
+const { clothesRoutes } = require("./routes/clothes.route");
+const { foodRoutes } = require("./routes/food.route");
 
-const { notFound } = require('./error-handlers/404');
-const { serverError } = require('./error-handlers/500');
+const { notFound } = require("./error-handlers/404");
+const { serverError } = require("./error-handlers/500");
 
 const server = express();
 
@@ -20,4 +20,3 @@ server.use(notFound);
 server.use(serverError);
 
 module.exports = { server };
-
