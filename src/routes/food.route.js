@@ -1,15 +1,15 @@
-const express = require('express');
+const express = require("express");
 
-const { Food } = require('../models/index');
+const { Food } = require("../models/index");
 
 const foodRoutes = express();
 
 // RESTful Route Declarations
-foodRoutes.get('/food', getFoods); // Retrieve All
-foodRoutes.get('/food/:id', getFood); // Retrieve One
-foodRoutes.post('/food', createFood); // Create
-foodRoutes.put('/food/:id', updateFood); // Update
-foodRoutes.delete('/food/:id', deleteFood); // Delete
+foodRoutes.get("/food", getFoods); // Retrieve All
+foodRoutes.get("/food/:id", getFood); // Retrieve One
+foodRoutes.post("/food", createFood); // Create
+foodRoutes.put("/food/:id", updateFood); // Update
+foodRoutes.delete("/food/:id", deleteFood); // Delete
 
 async function getFoods(_, res) {
   const allFoods = await Food.findAll();
@@ -67,5 +67,5 @@ async function updateFood(req, res, next) {
 }
 
 module.exports = {
-  foodRoutes
+  foodRoutes,
 };

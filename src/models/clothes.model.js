@@ -1,10 +1,10 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes } = require("sequelize");
 
 function makeClothes(sequelize) {
-    return sequelize.define('Clothes', {
-        name: DataTypes.STRING,
-        color: DataTypes.STRING,
-    });
+  return sequelize.define("Clothes", {
+    name: DataTypes.STRING,
+    color: DataTypes.STRING,
+  });
 }
 
-module.exports = {makeClothes};
+module.exports = { makeClothes };

@@ -1,15 +1,15 @@
-const express = require('express');
+const express = require("express");
 
-const { Clothes } = require('../models/index');
+const { Clothes } = require("../models/index");
 
 const clothesRoutes = express();
 
 // RESTful Route Declarations
-clothesRoutes.get('/clothes', getClothes); // Retrieve All
-clothesRoutes.get('/clothes/:id', getCloth); // Retrieve One
-clothesRoutes.post('/clothes', createCloth); // Create
-clothesRoutes.put('/clothes/:id', updateCloth); // Update
-clothesRoutes.delete('/clothes/:id', deleteCloth); // Delete
+clothesRoutes.get("/clothes", getClothes); // Retrieve All
+clothesRoutes.get("/clothes/:id", getCloth); // Retrieve One
+clothesRoutes.post("/clothes", createCloth); // Create
+clothesRoutes.put("/clothes/:id", updateCloth); // Update
+clothesRoutes.delete("/clothes/:id", deleteCloth); // Delete
 
 async function getClothes(_, res) {
   const allClothes = await Clothes.findAll();
@@ -67,5 +67,5 @@ async function updateCloth(req, res, next) {
 }
 
 module.exports = {
-  clothesRoutes
+  clothesRoutes,
 };
